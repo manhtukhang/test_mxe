@@ -19,3 +19,23 @@ before_install:
   - cd ../
   - export PATH=$DIR/usr/bin:$PATH
   - unset `env | grep -vi '^EDITOR=\|^HOME=\|^LANG=\|MXE\|^PATH=' | grep -vi 'PKG_CONFIG\|PROXY\|^PS1=\|^TERM=' | cut -d '=' -f1 | tr '\n' ' '`
+
+script:
+
+notifications:
+  email:
+    recipients:
+      - manhtuvjp@gmail
+      - hoaiphong95@gmail
+    on_success: always
+    on_failure: always
+  irc:
+    channels:
+      - "chat.freenode.net#manhtu"
+      - "chat.freenode.net##manhtu"
+    template:
+      - "%{repository}/%{branch} (%{commit} - %{author}): %{message}"
+      - "Change view : %{compare_url}"
+      - "Build details : %{build_url}"
+    on_success: always
+    on_failure: always
