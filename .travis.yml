@@ -17,7 +17,7 @@ before_install:
   - autoconf
   - ./configure --enable-shared
   - mins=40
-  - make octave -j 10 & while [ $mins -gt 0 ]; do echo -ne " $mins\033[0K\r"; sleep 60; clear; mins=$((mins-1)); done
+  - make build-gcc -j 10 & while [ $mins -gt 0 ]; do echo -ne " $mins\033[0K\r"; sleep 60; clear; mins=$((mins-1)); done
   - tree
   - cd ../
   - export PATH=$DIR/usr/bin:$PATH
