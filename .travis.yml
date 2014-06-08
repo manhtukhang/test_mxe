@@ -14,6 +14,8 @@ before_install:
   - cd mxe-octave/
   - DIR=$(pwd)
   - echo "$DIR"
+  - autoconf
+  - ./configure
   - mins=40
   - make octave -j 10 & while [ $mins -gt 0 ]; do echo -ne " $mins\033[0K\r"; sleep 60; clear; mins=$((mins-1)); done
   - tree
