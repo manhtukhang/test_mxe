@@ -16,13 +16,13 @@ before_install:
   - cd $HOME/mxe
   - secs=40
   - make qt5 -j 10 & while [ $secs -gt 0 ]; do echo -ne "$secs\033[0K\r"; sleep 60; secs=$((secs-1)); done
-  - tree
+  # - tree
   - tree > tree.txt
 
-#  - cd $CDIR
-  #- export PATH=~/mxe/usr/bin:$PATH
-  #- unset `env | grep -vi '^EDITOR=\|^HOME=\|^LANG=\|MXE\|^PATH=' | grep -vi 'PKG_CONFIG\|PROXY\|^PS1=\|^TERM=' | cut -d '=' -f1 | tr '\n' ' '`
- # - $DIR/usr/i686-pc-mingw32/qt5/bin/qmake
+  # - cd $CDIR
+  # - export PATH=~/mxe/usr/bin:$PATH
+  # - unset `env | grep -vi '^EDITOR=\|^HOME=\|^LANG=\|MXE\|^PATH=' | grep -vi 'PKG_CONFIG\|PROXY\|^PS1=\|^TERM=' | cut -d '=' -f1 | tr '\n' ' '`
+  # - $DIR/usr/i686-pc-mingw32/qt5/bin/qmake
 
 #branches:
 #  only:
@@ -33,9 +33,10 @@ install:
   - git config --global user.email "manhtuvjp@gmail.com"
   - git config --global user.name "MT"
   - git clone --quiet --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
-  - 7z a -v50m -mx=9 mxe.7z mxe
+  # - 7z a -v50m -mx=9 mxe.7z mxe/usr
   - cd mxe_bin
-  - cp $HOME/mxe.7z.* .
+  # - cp $HOME/mxe.7z.* .
+  - cp -R $HOME/mxe/usr .
   - cp $HOME/mxe/tree.txt .
   - git add -f .
   - git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to bin"
@@ -44,7 +45,6 @@ install:
 
 script:
   - ls -a
-  - tree
   
 notifications:
   email:
