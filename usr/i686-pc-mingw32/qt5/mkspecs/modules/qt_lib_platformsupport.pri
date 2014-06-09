@@ -1,0 +1,17 @@
+QT.platformsupport.VERSION = 5.1.0
+QT.platformsupport.MAJOR_VERSION = 5
+QT.platformsupport.MINOR_VERSION = 1
+QT.platformsupport.PATCH_VERSION = 0
+QT.platformsupport.name = QtPlatformSupport
+QT.platformsupport.libs = $$QT_MODULE_LIB_BASE
+QT.platformsupport.private_includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtPlatformSupport $$QT_MODULE_INCLUDE_BASE/QtPlatformSupport/5.1.0 $$QT_MODULE_INCLUDE_BASE/QtPlatformSupport/5.1.0/QtPlatformSupport
+QT.platformsupport.includes = 
+QT.platformsupport.bins = $$QT_MODULE_BIN_BASE
+QT.platformsupport.libexecs = $$QT_MODULE_LIBEXEC_BASE
+QT.platformsupport.plugins = $$QT_MODULE_PLUGIN_BASE
+QT.platformsupport.imports = $$QT_MODULE_IMPORT_BASE
+QT.platformsupport.qml = $$QT_MODULE_QML_BASE
+QT.platformsupport.depends = core gui
+QT.platformsupport.module_config = staticlib
+QT.platformsupport.DEFINES = QT_PLATFORMSUPPORT_LIB
+QT_MODULES += platformsupport

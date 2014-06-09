@@ -1,0 +1,14 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32/qt5
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 PrintSupport
+Description: Qt PrintSupport module
+Version: 5.1.0
+Libs: -L${libdir} -lQt5PrintSupport 
+Libs.private: -lwinspool -L/home/travis/mxe/usr/i686-pc-mingw32/qt5/lib -lQt5Widgetsd -lQt5Guid -lcomdlg32 -loleaut32 -limm32 -lwinmm -lglu32 -lopengl32 -lgdi32 -ljpeg -lpng -lQt5Cored -lole32 -luuid -lws2_32 -ladvapi32 -lshell32 -luser32 -lkernel32 -lz -lsicuind -lsicuucd -lsicudtd -lpcre16   
+Cflags: -I${includedir}/QtPrintSupport -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Widgets
+

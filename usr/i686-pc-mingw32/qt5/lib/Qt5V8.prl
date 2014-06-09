@@ -1,0 +1,6 @@
+QMAKE_PRL_BUILD_DIR = /home/travis/mxe/tmp-qtjsbackend/qtjsbackend-opensource-src-5.1.0/src/v8
+QMAKE_PRO_INPUT = v8.pro
+QMAKE_PRL_TARGET = libQt5V8
+QMAKE_PRL_CONFIG = lex yacc depend_includepath testcase_targets import_plugins import_qpa_plugin incremental_off windows qt release link_prl debug_and_release debug_and_release_target precompile_header cross_compile static qpa rtti no_mocdepend release qt_no_framework win32 mingw gcc cross_compile system-sqlite qpa precompile_header sse2 sse3 ssse3 sse4_1 sse4_2 avx avx2 prefix_build force_independent force_bootstrap create_prl link_prl prepare_docs qt_docs_targets no_private_qt_headers_warning QTDIR_build exceptions_off testcase_exceptions config_hardfloat done_config_hardfloat release ReleaseBuild Release build_pass internal_module need_fwd_pri qt_install_module qt_install_headers qmake_cache target_qt skip_target_version_ext create_pc c++11 warn_off release ReleaseBuild Release build_pass have_target staticlib no_autoqmake thread
+QMAKE_PRL_VERSION = 5.1.0
+QMAKE_PRL_LIBS = -lws2_32 -lwinmm  

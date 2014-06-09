@@ -1,0 +1,12 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: lcms
+Description: LCMS Color Management Library
+Version: 1.19
+Libs: -L${libdir} -llcms
+Libs.private: -ljpeg
+Cflags: -I${includedir}
+Requires.private: libtiff-4
