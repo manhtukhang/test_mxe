@@ -10,14 +10,15 @@ before_install:
   # - sudo apt-get upgrade -y
 
 install:
-  - sudo apt-get install g++-4.8 libboost-regex-dev zip autopoint autoconf automake bash bison bzip2 cmake flex gettext git g++ gperf intltool libffi-dev libtool libltdl-dev libssl-dev libxml-parser-perl make openssl patch perl pkg-config python ruby scons sed unzip wget xz-utils g++-multilib libc6-dev-i386 tree -y
+  - sudo apt-get install g++-4.8 autopoint unzip g++-multilib libc6-dev-i386 tree -y
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 before_script:
   - git clone -b stable https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=30
+  - MINS=20
   - NUM_JOBS=$((3 * $(grep processor /proc/cpuinfo | wc -l) / 2))
+  - echo $NUM_JOBS
 
 script:
   - cd $HOME/mxe
