@@ -16,11 +16,12 @@ install:
 
 before_script:
   - git clone -b stable https://github.com/mxe/mxe.git $HOME/mxe
-  - mins=40
+  - MINS=30
+  - NUM_JOBS=$((3 * `grep processor /proc/cpuinfo | wc -l` / 2))
 
 script:
   - cd $HOME/mxe
-  - make qt5 & while [ $mins -gt 0 ]; do echo -e "\n$mins\033[0K\r"; sleep 60; mins=$((mins-1)); done
+  - make qt5 --jobs=NUM_JOBS  & while [ $MINS -gt 0 ]; do echo -e "\n$mins\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done
 
 after_success:
   - tree > tree.txt
