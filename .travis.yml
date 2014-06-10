@@ -21,7 +21,7 @@ before_script:
 
 script:
   - cd $HOME/mxe
-  - make qt5 --jobs=NUM_JOBS  & while [ $MINS -gt 0 ]; do echo -e "\n$mins\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done
+  - make qt5 --jobs=$NUM_JOBS  & while [ $MINS -gt 0 ]; do echo -e "\n$mins\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done
 
 after_success:
   - tree > tree.txt
