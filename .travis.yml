@@ -11,41 +11,34 @@ before_install:
   - if [ "$CXX" = "g++" ]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50; fi
   - if [ "$CXX" = "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50; fi
   - CDIR=$(pwd)
-  #- sudo cat /sys/devices/system/cpu/online
   - git clone -b stable https://github.com/mxe/mxe.git $HOME/mxe
   - cd $HOME/mxe
   - secs=40
   - make qt5 -j 10 & while [ $secs -gt 0 ]; do echo -ne "$secs\033[0K\r"; sleep 60; secs=$((secs-1)); done
-  # - tree
   - tree > tree.txt
 
-  # - cd $CDIR
-  # - export PATH=~/mxe/usr/bin:$PATH
-  # - unset `env | grep -vi '^EDITOR=\|^HOME=\|^LANG=\|MXE\|^PATH=' | grep -vi 'PKG_CONFIG\|PROXY\|^PS1=\|^TERM=' | cut -d '=' -f1 | tr '\n' ' '`
-  # - $DIR/usr/i686-pc-mingw32/qt5/bin/qmake
-
-#branches:
-#  only:
-#    - mxe_test
 install:
   - cd $HOME
   - ls
   - git config --global user.email "manhtuvjp@gmail.com"
-  - git config --global user.name "MT"
+  - git config --global user.name "Mạnh Tử"
   - git clone --quiet --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
-  # - 7z a -v50m -mx=9 mxe.7z mxe/usr
   - cd mxe_bin
-  # - cp $HOME/mxe.7z.* .
-  - cp -R $HOME/mxe/usr .
-  - cp $HOME/mxe/tree.txt .
+  - chmod +x link.sh
+  - cp -Rf $HOME/mxe/usr .
+  - cp -f $HOME/mxe/tree.txt .
   - git add -f .
   - git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to bin"
   - git push -fq origin bin > /dev/null
-  - echo -e "Done magic with coverage\n"
 
 script:
   - ls -a
   
+
+branches:
+  only:
+    - master
+
 notifications:
   email:
     recipients:
