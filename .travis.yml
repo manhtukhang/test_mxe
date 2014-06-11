@@ -5,18 +5,18 @@ compiler:
   # - clang
 
 before_install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  # - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
   # - sudo apt-get upgrade -y
 
 install:
-  - sudo apt-get install g++-4.8 autopoint intltool unzip g++-multilib libc6-dev-i386 tree -y
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+  - sudo apt-get install autopoint intltool unzip g++-multilib libc6-dev-i386 tree -y
+  # - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+  # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 before_script:
   - git clone --depth=1 --branch=stable https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=40
+  - MINS=44
   - NUM_JOBS=$((3 * $(grep processor /proc/cpuinfo | wc -l) / 2))
   - echo $NUM_JOBS
 
@@ -31,9 +31,11 @@ after_success:
   - git config --global user.name "MT"
   - git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
   - cd mxe_bin
-  - git rm -rf .
+  # - mv link.sh ../
+  - git rm -rf . > /dev/null
   - cp -Rf $HOME/mxe/usr .
   - cp -f $HOME/mxe/tree.txt .
+  # - mv ../link.sh .
   - git add -f .
   - git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to bin"
   - git push -fq origin bin > /dev/null
