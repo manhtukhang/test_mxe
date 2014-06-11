@@ -16,7 +16,7 @@ install:
 
 before_script:
   - git clone --branch=stable https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=15
+  - MINS=20
   - NUM_JOBS=$((2 * $(grep processor /proc/cpuinfo | wc -l) / 2))
   - echo $NUM_JOBS
 
