@@ -5,17 +5,17 @@ compiler:
   # - clang
 
 before_install:
-  # - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
   # - sudo apt-get upgrade -y
 
 install:
-  - sudo apt-get install autopoint intltool unzip g++-multilib libc6-dev-i386 tree -y
-  # - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
-  # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+  - sudo apt-get install g++4.8 autopoint intltool unzip g++-multilib libc6-dev-i386 tree -y
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 before_script:
-  - git clone --depth=1 --branch=stable https://github.com/mxe/mxe.git $HOME/mxe
+  - git clone --branch=stable https://github.com/mxe/mxe.git $HOME/mxe
   - MINS=15
   - NUM_JOBS=$((2 * $(grep processor /proc/cpuinfo | wc -l) / 2))
   - echo $NUM_JOBS
