@@ -22,13 +22,14 @@ before_script:
 
 script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git ../mxe_bin > /dev/null & make qt5 --jobs=$NUM_JOBS
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make qt5 --jobs=$NUM_JOBS &
 
 after_success:
   - tree > tree.txt
   - cd $HOME
   - git config --global user.email "manhtuvjp@gmail.com"
   - git config --global user.name "MT"
+  - git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
   - cd mxe_bin
   - git rm -rf ./usr > /dev/null
   - cp -Rf $HOME/mxe/usr .
