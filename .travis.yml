@@ -15,7 +15,7 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 before_script:
-  - git clone -b stable https://github.com/mxe/mxe.git $HOME/mxe
+  - git clone --depth=1 --branch=stable https://github.com/mxe/mxe.git $HOME/mxe
   - MINS=40
   - NUM_JOBS=$((3 * $(grep processor /proc/cpuinfo | wc -l) / 2))
   - echo $NUM_JOBS
@@ -29,8 +29,9 @@ after_success:
   - cd $HOME
   - git config --global user.email "manhtuvjp@gmail.com"
   - git config --global user.name "MT"
-  - git clone --quiet --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
+  - git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
   - cd mxe_bin
+  - git rm -rf .
   - cp -Rf $HOME/mxe/usr .
   - cp -f $HOME/mxe/tree.txt .
   - git add -f .
