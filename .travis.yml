@@ -16,22 +16,21 @@ install:
 
 before_script:
   - git clone --branch=stable https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=25
+  - MINS=15
   - NUM_JOBS=$((2 * $(grep processor /proc/cpuinfo | wc -l) / 2))
   - echo $NUM_JOBS
 
 script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make qt5 --jobs=$NUM_JOBS
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null & make qt5 --jobs=$NUM_JOBS
 
 after_success:
   - tree > tree.txt
   - cd $HOME
   - git config --global user.email "manhtuvjp@gmail.com"
   - git config --global user.name "MT"
-  - git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
-  - cd mxe_bin
-  - git rm -rf ./usr > /dev/null
+  - cd mxe/mxe_bin
+  - git rm -rf usr > /dev/null
   - cp -Rf $HOME/mxe/usr .
   - cp -f $HOME/mxe/tree.txt .
   - git add -f .
