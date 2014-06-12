@@ -1,0 +1,11 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32
+exec_prefix=/home/travis/mxe/usr/i686-pc-mingw32
+libdir=/home/travis/mxe/usr/i686-pc-mingw32/lib
+includedir=/home/travis/mxe/usr/i686-pc-mingw32/include
+
+Name: libodbc++
+Description: An ODBC class library that emulates the JDBC interface
+Version: 0.2.5
+Requires:
+Libs: -L${libdir} -lodbc++
+Cflags: -I${includedir} 

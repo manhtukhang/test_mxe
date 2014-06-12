@@ -1,0 +1,16 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+sysconfdir=${prefix}/etc
+localstatedir=${prefix}/var
+PACKAGE=fontconfig
+confdir=${sysconfdir}/fonts
+cachedir=WINDOWSTEMPDIR_FONTCONFIG_CACHE
+
+Name: Fontconfig
+Description: Font configuration and customization library
+Version: 2.10.93
+Libs: -L${libdir} -lfontconfig
+Libs.private:  -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lexpat -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lfreetype -lbz2 -lpng16 -lz   
+Cflags: -I${includedir}
