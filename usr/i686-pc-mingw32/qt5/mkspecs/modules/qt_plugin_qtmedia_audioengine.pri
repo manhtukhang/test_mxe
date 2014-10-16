@@ -1,2 +1,0 @@
-QT_PLUGIN.qtmedia_audioengine.TYPE = mediaservice
-QT_PLUGIN.qtmedia_audioengine.CLASS_NAME = AudioCaptureServicePlugin
