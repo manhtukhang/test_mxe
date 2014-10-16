@@ -10,7 +10,7 @@ before_install:
   # - sudo apt-get upgrade -y
 
 install:
-  - sudo apt-get install g++-4.8 g++-4.8-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 tree -y
+  - sudo apt-get install g++-4.8 g++-4.8-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 gperf tree -y
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
