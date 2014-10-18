@@ -1,2 +1,0 @@
-#!/bin/sh
-PKG_CONFIG_PATH="$PKG_CONFIG_PATH_i686_pc_mingw32" PKG_CONFIG_LIBDIR='/home/travis/mxe/usr/i686-pc-mingw32/lib/pkgconfig' exec pkg-config --static "$@"
