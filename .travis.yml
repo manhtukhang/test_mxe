@@ -7,7 +7,7 @@ compiler:
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
-  # - sudo apt-get upgrade -y
+  - sudo apt-get upgrade -y
 
 install:
   - sudo apt-get install g++-4.8 g++-4.8-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 gperf tree -y
@@ -17,13 +17,13 @@ install:
 
 before_script:
   - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=45
-  - NUM_JOBS=$((2 * $(grep processor /proc/cpuinfo | wc -l) / 2))
+  - MINS=15
+  - NUM_JOBS=$(grep processor /proc/cpuinfo | wc -l)
   - echo $NUM_JOBS
 
 script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null & make qt5 flex bison --jobs=$NUM_JOBS
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make gcc flex bison --jobs=$NUM_JOBS
 
 after_success:
   - tree > tree.txt
