@@ -18,7 +18,7 @@ before_install:
 before_script:
   - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
   - MINS=45
-  - NUM_JOBS=$((2 * $(grep processor /proc/cpuinfo | wc -l) / 2))
+  - NUM_JOBS=$(grep processor /proc/cpuinfo | wc -l)
   - echo $NUM_JOBS
   - cd $HOME/mxe
   - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make qt5 flex bison --jobs=$NUM_JOBS
