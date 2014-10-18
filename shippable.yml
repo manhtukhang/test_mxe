@@ -15,10 +15,9 @@ before_install:
   - sudo apt-get install autoconf automake bash bison bzip2 cmake flex gettext git g++ intltool libffi-dev libtool libltdl-dev libssl-dev libxml-parser-perl make openssl patch perl pkg-config scons sed unzip wget xz-utils -y
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
-
-before_script:
   - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=45
+before_script:
+  - MINS=15
   - NUM_JOBS=$(grep processor /proc/cpuinfo | wc -l)
   - echo $NUM_JOBS
   - cd $HOME/mxe
