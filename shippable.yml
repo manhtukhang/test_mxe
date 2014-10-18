@@ -22,25 +22,12 @@ before_script:
 
 script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null & make qt5 flex bison --jobs=$NUM_JOBS
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make qt5 flex bison --jobs=$NUM_JOBS
 
 after_success:
   - tree > tree.txt
-  - cd $HOME
-  - git config --global user.email "manhtuvjp@gmail.com"
-  - git config --global user.name "MT"
-  - cd mxe/mxe_bin
-  - git rm -rf usr > /dev/null
-  - cp -Rf $HOME/mxe/usr .
-  - cp -f $HOME/mxe/tree.txt .
-  - git add -f .
-  - git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to bin"
-  - git push -fq origin bin > /dev/null
+  - cat tree.txt
 
 branches:
   only:
-    - master
-
-env:
-  global:
-    secure: JRU5h1rTXK2WaAmKdyhgrml4WbFDmK/yGa2zR7DrNGGXJFO7JN8ekFSEj3PaC/YD0EEFzNgqT0oXwLKtNkTTmemWE/vwEZpnG0epibqHwj3uY7MJCofMZBrcPb44O/kirROn3mkWlEaEtcb4JDtgPOtIo3dF0el9munl9PM0XBA=
+    - shipable
