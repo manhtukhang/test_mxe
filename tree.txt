@@ -17,7 +17,7 @@
 │   └── __gmsl
 ├── index.html
 ├── log
-│   ├── 20141019_121011
+│   ├── 20141019_191413
 │   │   ├── binutils-download
 │   │   ├── binutils_i686-w64-mingw32.static
 │   │   ├── gcc-cloog-download
@@ -36,33 +36,33 @@
 │   │   ├── mingw-w64_i686-w64-mingw32.static
 │   │   ├── pkgconf-download
 │   │   └── pkgconf_i686-w64-mingw32.static
-│   ├── binutils -> 20141019_121011/binutils_i686-w64-mingw32.static
-│   ├── binutils-download -> 20141019_121011/binutils-download
-│   ├── binutils_i686-w64-mingw32.static -> 20141019_121011/binutils_i686-w64-mingw32.static
-│   ├── gcc -> 20141019_121011/gcc_i686-w64-mingw32.static
-│   ├── gcc-cloog -> 20141019_121011/gcc-cloog_i686-w64-mingw32.static
-│   ├── gcc-cloog-download -> 20141019_121011/gcc-cloog-download
-│   ├── gcc-cloog_i686-w64-mingw32.static -> 20141019_121011/gcc-cloog_i686-w64-mingw32.static
-│   ├── gcc-download -> 20141019_121011/gcc-download
-│   ├── gcc-gmp -> 20141019_121011/gcc-gmp_i686-w64-mingw32.static
-│   ├── gcc-gmp-download -> 20141019_121011/gcc-gmp-download
-│   ├── gcc-gmp_i686-w64-mingw32.static -> 20141019_121011/gcc-gmp_i686-w64-mingw32.static
-│   ├── gcc_i686-w64-mingw32.static -> 20141019_121011/gcc_i686-w64-mingw32.static
-│   ├── gcc-isl -> 20141019_121011/gcc-isl_i686-w64-mingw32.static
-│   ├── gcc-isl-download -> 20141019_121011/gcc-isl-download
-│   ├── gcc-isl_i686-w64-mingw32.static -> 20141019_121011/gcc-isl_i686-w64-mingw32.static
-│   ├── gcc-mpc -> 20141019_121011/gcc-mpc_i686-w64-mingw32.static
-│   ├── gcc-mpc-download -> 20141019_121011/gcc-mpc-download
-│   ├── gcc-mpc_i686-w64-mingw32.static -> 20141019_121011/gcc-mpc_i686-w64-mingw32.static
-│   ├── gcc-mpfr -> 20141019_121011/gcc-mpfr_i686-w64-mingw32.static
-│   ├── gcc-mpfr-download -> 20141019_121011/gcc-mpfr-download
-│   ├── gcc-mpfr_i686-w64-mingw32.static -> 20141019_121011/gcc-mpfr_i686-w64-mingw32.static
-│   ├── mingw-w64 -> 20141019_121011/mingw-w64_i686-w64-mingw32.static
-│   ├── mingw-w64-download -> 20141019_121011/mingw-w64-download
-│   ├── mingw-w64_i686-w64-mingw32.static -> 20141019_121011/mingw-w64_i686-w64-mingw32.static
-│   ├── pkgconf -> 20141019_121011/pkgconf_i686-w64-mingw32.static
-│   ├── pkgconf-download -> 20141019_121011/pkgconf-download
-│   └── pkgconf_i686-w64-mingw32.static -> 20141019_121011/pkgconf_i686-w64-mingw32.static
+│   ├── binutils -> 20141019_191413/binutils_i686-w64-mingw32.static
+│   ├── binutils-download -> 20141019_191413/binutils-download
+│   ├── binutils_i686-w64-mingw32.static -> 20141019_191413/binutils_i686-w64-mingw32.static
+│   ├── gcc -> 20141019_191413/gcc_i686-w64-mingw32.static
+│   ├── gcc-cloog -> 20141019_191413/gcc-cloog_i686-w64-mingw32.static
+│   ├── gcc-cloog-download -> 20141019_191413/gcc-cloog-download
+│   ├── gcc-cloog_i686-w64-mingw32.static -> 20141019_191413/gcc-cloog_i686-w64-mingw32.static
+│   ├── gcc-download -> 20141019_191413/gcc-download
+│   ├── gcc-gmp -> 20141019_191413/gcc-gmp_i686-w64-mingw32.static
+│   ├── gcc-gmp-download -> 20141019_191413/gcc-gmp-download
+│   ├── gcc-gmp_i686-w64-mingw32.static -> 20141019_191413/gcc-gmp_i686-w64-mingw32.static
+│   ├── gcc_i686-w64-mingw32.static -> 20141019_191413/gcc_i686-w64-mingw32.static
+│   ├── gcc-isl -> 20141019_191413/gcc-isl_i686-w64-mingw32.static
+│   ├── gcc-isl-download -> 20141019_191413/gcc-isl-download
+│   ├── gcc-isl_i686-w64-mingw32.static -> 20141019_191413/gcc-isl_i686-w64-mingw32.static
+│   ├── gcc-mpc -> 20141019_191413/gcc-mpc_i686-w64-mingw32.static
+│   ├── gcc-mpc-download -> 20141019_191413/gcc-mpc-download
+│   ├── gcc-mpc_i686-w64-mingw32.static -> 20141019_191413/gcc-mpc_i686-w64-mingw32.static
+│   ├── gcc-mpfr -> 20141019_191413/gcc-mpfr_i686-w64-mingw32.static
+│   ├── gcc-mpfr-download -> 20141019_191413/gcc-mpfr-download
+│   ├── gcc-mpfr_i686-w64-mingw32.static -> 20141019_191413/gcc-mpfr_i686-w64-mingw32.static
+│   ├── mingw-w64 -> 20141019_191413/mingw-w64_i686-w64-mingw32.static
+│   ├── mingw-w64-download -> 20141019_191413/mingw-w64-download
+│   ├── mingw-w64_i686-w64-mingw32.static -> 20141019_191413/mingw-w64_i686-w64-mingw32.static
+│   ├── pkgconf -> 20141019_191413/pkgconf_i686-w64-mingw32.static
+│   ├── pkgconf-download -> 20141019_191413/pkgconf-download
+│   └── pkgconf_i686-w64-mingw32.static -> 20141019_191413/pkgconf_i686-w64-mingw32.static
 ├── Makefile
 ├── mxe_bin
 │   ├── tree.txt
@@ -1539,8 +1539,6 @@
 │       │   │   └── zmouse.h
 │       │   ├── installed
 │       │   │   ├── binutils
-│       │   │   ├── bison
-│       │   │   ├── flex
 │       │   │   ├── gcc
 │       │   │   ├── gcc-cloog
 │       │   │   ├── gcc-gmp
@@ -7012,4 +7010,4 @@
                 ├── gfdl.7
                 └── gpl.7
 
-225 directories, 6787 files
+225 directories, 6785 files
