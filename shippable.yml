@@ -31,11 +31,12 @@ script:
   - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make gcc --jobs=$NUM_JOBS
 
 after_success:
+  - git clone --quiet --depth=1 --branch=bin2 https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
   - tree > tree.txt
   - cd $HOME
   - git config --global user.email "manhtuvjp@gmail.com"
   - git config --global user.name "MT"
-  - cd mxe/mxe_bin
+  - cd $HOME/mxe/mxe_bin
   - git rm -rf usr > /dev/null
   - cp -Rf $HOME/mxe/usr .
   - cp -f $HOME/mxe/tree.txt .
