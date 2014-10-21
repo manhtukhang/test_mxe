@@ -1,5 +1,8 @@
 # Author: Khang Mạnh Tử
-build_environment: ubuntu1204
+build_environment: ubuntu1404
+
+cache: true
+
 language: go
 go:
   - release
@@ -11,20 +14,38 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
   # - sudo apt-get upgrade -y
-  - sudo apt-get install g++-4.8 g++-4.8-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 gperf tree -y
-  - sudo apt-get install autoconf automake bash bison bzip2 cmake flex gettext git g++ intltool libffi-dev libtool libltdl-dev libssl-dev libxml-parser-perl make openssl patch perl pkg-config scons sed unzip wget xz-utils -y
+
+install:
+  - sudo apt-get install g++-4.8 g++-4.8-multilib autopoint libc6-dev-i386 gperf tree autoconf automake bash bison bzip2 cmake flex gettext git intltool libffi-dev libtool libltdl-dev libssl-dev libxml-parser-perl make openssl patch perl pkg-config scons sed unzip wget xz-utils -y
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
-  - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
+
 before_script:
+  - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
   - MINS=15
   - NUM_JOBS=$(grep processor /proc/cpuinfo | wc -l)
   - echo $NUM_JOBS
+
+script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make gcc flex bison --jobs=$NUM_JOBS
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make gcc --jobs=$NUM_JOBS
+
+after_success:
   - tree > tree.txt
-  - cat tree.txt
+  - cd $HOME
+  - git config --global user.email "manhtuvjp@gmail.com"
+  - git config --global user.name "MT"
+  - cd mxe/mxe_bin
+  - git rm -rf usr > /dev/null
+  - cp -Rf $HOME/mxe/usr .
+  - cp -f $HOME/mxe/tree.txt .
+  - git add -f .
+  - git commit -m "Shippable build $BUILD_NUMBER pushed to bin"
+  - git push -fq origin bin > /dev/null
 
 branches:
   only:
     - shipable
+
+env:
+  - secure: tCMrEYnz2QLc8FuAT0K3uG6tLMG/6Od1TL49oPTrMRh0veBZmRP1RnVzGxbsUWXcxYzj0RVlZBteD7CjSKN11Yn7Aig1ZQY00H16qrI6ose7WjDi4XdeARDEYP490v6b3vuifTCOY29GkhqV/zv5a7gzP6Lz4QUve3ROPukoi0spfH0+888po720FH9oyxb1rEzmyWuIAwh0OTHReHDpCbM0s6h26gUkedhyW6AubnJfV8fx/bQQh3qqY06mEhALlDTPThxsSxuGrMA19LMMGpzJr5T8cDDD/nxlONoBY4rpNx3lbmaml/aoiQUEoXYN67jdlzdaAx3QnA09u6P1vw==
