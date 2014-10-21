@@ -22,7 +22,7 @@ install:
 
 before_script:
   - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=15
+  - MINS=5
   - NUM_JOBS=$(grep processor /proc/cpuinfo | wc -l)
   - echo $NUM_JOBS
 
@@ -37,7 +37,7 @@ after_success:
   - git config --global user.email "manhtuvjp@gmail.com"
   - git config --global user.name "MT"
   - cd $HOME/mxe/mxe_bin
-  - git rm -rf usr > /dev/null
+  - git rm -rf \* > /dev/null
   - cp -Rf $HOME/mxe/usr .
   - cp -f $HOME/mxe/tree.txt .
   - git add -f .
