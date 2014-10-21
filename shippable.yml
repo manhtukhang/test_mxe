@@ -1,7 +1,7 @@
 # Author: Khang Mạnh Tử
 build_environment: ubuntu1404
 
-cache: true
+#cache: true
 
 language: go
 go:
