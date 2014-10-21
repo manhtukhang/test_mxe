@@ -1,0 +1,2 @@
+#!/bin/sh
+PKG_CONFIG_PATH="/home/shippable/mxe/usr/i686-w64-mingw32.static/qt5/lib/pkgconfig":"$PKG_CONFIG_PATH_i686_w64_mingw32_static" PKG_CONFIG_LIBDIR='/home/shippable/mxe/usr/i686-w64-mingw32.static/lib/pkgconfig' exec /home/shippable/mxe/usr/i686-w64-mingw32.static/bin/pkgconf --static "$@"
