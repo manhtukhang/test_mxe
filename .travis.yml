@@ -16,13 +16,13 @@ install:
 
 before_script:
   - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
-  - MINS=10
+  - MINS=30
   - NUM_JOBS=$(grep processor /proc/cpuinfo | wc -l)
   - echo $NUM_JOBS
 
 script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make gcc --jobs=$NUM_JOBS MXE_TARGETS=x86_64-w64-mingw32
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & make qt5 opencv --jobs=$NUM_JOBS MXE_TARGETS=x86_64-w64-mingw32
   - git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null
 after_success:
 
