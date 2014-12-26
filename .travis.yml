@@ -15,7 +15,7 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 before_script:
-  - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
+  - git clone --branch=stable https://github.com/mxe/mxe.git $HOME/mxe
   - MINS=30
   - NUM_JOBS=$(grep processor /proc/cpuinfo | wc -l)
   - echo $NUM_JOBS
