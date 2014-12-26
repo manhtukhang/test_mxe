@@ -1,0 +1,14 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32/qt5
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 Qml
+Description: Qt Qml module
+Version: 5.1.0
+Libs: -L${libdir} -lQt5Qml 
+Libs.private: -L/home/travis/mxe/usr/i686-pc-mingw32/qt5/lib -lQt5Networkd -lQt5Cored -L/home/travis/mxe/usr/i686-pc-mingw32/qt5/lib -lQt5V8d  
+Cflags: -I${includedir}/QtQml -I${includedir}
+Requires: Qt5Core Qt5Network
+

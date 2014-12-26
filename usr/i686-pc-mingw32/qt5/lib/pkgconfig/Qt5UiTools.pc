@@ -1,0 +1,14 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32/qt5
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 UiTools
+Description: Qt UiTools module
+Version: 5.1.0
+Libs: -L${libdir} -lQt5UiTools 
+Libs.private: -lglu32 -lopengl32 -lgdi32 -luser32 -L/home/travis/mxe/usr/i686-pc-mingw32/qt5/lib -lQt5Widgetsd -lQt5Guid -lQt5Cored   
+Cflags: -I${includedir}/QtUiTools -I${includedir}
+Requires: Qt5Core
+
