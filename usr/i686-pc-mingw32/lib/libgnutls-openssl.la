@@ -17,7 +17,7 @@ old_library='libgnutls-openssl.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/home/travis/mxe/usr/i686-pc-mingw32/lib /home/travis/mxe/usr/i686-pc-mingw32/lib/libgnutls.la -lz /home/travis/mxe/usr/i686-pc-mingw32/lib/libiconv.la -lhogweed /home/travis/mxe/usr/i686-pc-mingw32/lib/libgmp.la -lnettle -lcrypt32 -lws2_32 /home/travis/mxe/usr/i686-pc-mingw32/lib/libpcreposix.la /home/travis/mxe/usr/i686-pc-mingw32/lib/libpcre.la'
+dependency_libs=' -L/home/travis/mxe/usr/i686-pc-mingw32/lib /home/travis/mxe/usr/i686-pc-mingw32/lib/libgnutls.la -lz -lpthread /home/travis/mxe/usr/i686-pc-mingw32/lib/libiconv.la -lhogweed /home/travis/mxe/usr/i686-pc-mingw32/lib/libgmp.la -lnettle -lcrypt32 -lws2_32 /home/travis/mxe/usr/i686-pc-mingw32/lib/libpcreposix.la /home/travis/mxe/usr/i686-pc-mingw32/lib/libpcre.la'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

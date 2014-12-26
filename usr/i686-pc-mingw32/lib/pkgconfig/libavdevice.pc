@@ -1,0 +1,14 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavdevice
+Description: FFmpeg device handling library
+Version: 54.3.103
+Requires: libavfilter = 3.42.103, libavformat = 54.63.104
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lavdevice -lavicap32 -lws2_32 -mwindows -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lmingw32 -lSDLmain -lSDL -liconv -lm -luser32 -lgdi32 -lwinmm -ldxguid -lxvidcore -lx264 -lvpx -lpthread -lvpx -lpthread -lvorbisenc -lvorbis -logg -ltheoraenc -ltheoradec -logg -lspeex -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lopus -lopencore-amrwb -lopencore-amrnb -lmp3lame -lavifil32 -lm -lbz2 -lz -lpsapi -ladvapi32 -lshell32
+Libs.private: 
+Cflags: -I${includedir}

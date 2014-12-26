@@ -1,0 +1,15 @@
+# Package Information for pkg-config
+
+prefix=/home/travis/mxe/usr/i686-pc-mingw32
+exec_prefix=${prefix}
+libdir=
+includedir_old=${prefix}/include/opencv
+includedir_new=${prefix}/include
+
+Name: OpenCV
+Description: Open Source Computer Vision Library
+Version: 2.4.4
+Requires: OpenEXR libtiff-4
+Libs:  ${exec_prefix}/lib/libopencv_contrib244.a ${exec_prefix}/lib/libopencv_stitching244.a ${exec_prefix}/lib/libopencv_ts244.a ${exec_prefix}/lib/libopencv_videostab244.a ${exec_prefix}/lib/libopencv_gpu244.a ${exec_prefix}/lib/libopencv_legacy244.a ${exec_prefix}/lib/libopencv_ml244.a ${exec_prefix}/lib/libopencv_nonfree244.a ${exec_prefix}/lib/libopencv_objdetect244.a ${exec_prefix}/lib/libopencv_calib3d244.a ${exec_prefix}/lib/libopencv_photo244.a ${exec_prefix}/lib/libopencv_video244.a ${exec_prefix}/lib/libopencv_features2d244.a ${exec_prefix}/lib/libopencv_highgui244.a ${exec_prefix}/lib/libopencv_flann244.a ${exec_prefix}/lib/libopencv_imgproc244.a ${exec_prefix}/lib/libopencv_core244.a -lwinmm -lvfw32 -lole32 -lgdi32 -lcomctl32 /home/travis/mxe/usr/i686-pc-mingw32/lib/libIlmThread.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libHalf.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libIex.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libIlmImf.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libImath.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libjasper.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libtiff.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libpng.a /home/travis/mxe/usr/i686-pc-mingw32/lib/libjpeg.a -lopengl32 -lglu32 -lstdc++ /home/travis/mxe/usr/i686-pc-mingw32/lib/libz.a
+Libs.private: -luuid -loleaut32
+Cflags: -I${includedir_old} -I${includedir_new}

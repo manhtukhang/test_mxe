@@ -19,6 +19,6 @@ Description: Transport Security Layer implementation for the GNU system
 URL: http://www.gnutls.org/
 Version: 3.2.1
 Libs: -L${libdir} -lgnutls
-Libs.private: -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lz  -lws2_32  -L/home/travis/mxe/usr/i686-pc-mingw32/lib -liconv  -lws2_32  -lcrypt32
+Libs.private: -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lz  -lws2_32 -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lpthread -L/home/travis/mxe/usr/i686-pc-mingw32/lib -liconv  -lws2_32  -lcrypt32
 Requires.private: nettle, hogweed, zlib
 Cflags: -I${includedir}

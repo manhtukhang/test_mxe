@@ -8,7 +8,7 @@ Name: Qt5 Sql
 Description: Qt Sql module
 Version: 5.1.0
 Libs: -L${libdir} -lQt5Sql 
-Libs.private: -lpq -lsecur32 -lssl -lcrypto -lgdi32 -lodbc32 -lsybdb -lgnutls -lcrypt32 -lhogweed -lgmp -lnettle -liconv -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lsqlite3 -L/home/travis/mxe/usr/i686-pc-mingw32/qt5/lib -lQt5Cored -lole32 -luuid -lws2_32 -ladvapi32 -lshell32 -luser32 -lkernel32 -lz -lsicuind -lsicuucd -lsicudtd -lpcre16   
+Libs.private: -lpq -lsecur32 -lssl -lcrypto -lgdi32 -lodbc32 -lsybdb -lgnutls -lpthread -lcrypt32 -lhogweed -lgmp -lnettle -liconv -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lsqlite3 -L/home/travis/mxe/usr/i686-pc-mingw32/qt5/lib -lQt5Cored -lole32 -luuid -lws2_32 -ladvapi32 -lshell32 -luser32 -lkernel32 -lz -lsicuind -lsicuucd -lsicudtd -lpcre16   
 Cflags: -I${includedir}/QtSql -I${includedir}
 Requires: Qt5Core
 

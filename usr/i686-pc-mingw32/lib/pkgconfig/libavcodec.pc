@@ -1,0 +1,14 @@
+prefix=/home/travis/mxe/usr/i686-pc-mingw32
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 54.92.100
+Requires: libavutil = 52.18.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lavcodec -lavicap32 -lws2_32 -mwindows -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lmingw32 -lSDLmain -lSDL -liconv -lm -luser32 -lgdi32 -lwinmm -ldxguid -lxvidcore -lx264 -lvpx -lpthread -lvpx -lpthread -lvorbisenc -lvorbis -logg -ltheoraenc -ltheoradec -logg -lspeex -L/home/travis/mxe/usr/i686-pc-mingw32/lib -lopus -lopencore-amrwb -lopencore-amrnb -lmp3lame -lavifil32 -lm -lbz2 -lz -lpsapi -ladvapi32 -lshell32
+Libs.private: 
+Cflags: -I${includedir}
