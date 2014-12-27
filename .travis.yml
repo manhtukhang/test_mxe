@@ -22,7 +22,7 @@ before_script:
 
 script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null & make qt5 opencv --jobs=$NUM_JOBS
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null & make -j$NUM_JOBS qt5 opencv
 
 after_success:
   - tree > tree.txt
