@@ -10,9 +10,9 @@ before_install:
   # - sudo apt-get upgrade -y
 
 install:
-  - sudo apt-get install g++-4.9 g++-4.9-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 gperf tree -y
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 50
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
+  - sudo apt-get install g++-4.7 g++-4.7-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 gperf tree -y
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 50
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.7 50
 
 before_script:
   - git clone --branch=master https://github.com/mxe/mxe.git $HOME/mxe
@@ -22,7 +22,7 @@ before_script:
 
 script:
   - cd $HOME/mxe
-  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null & make -j32 qt5 opencv
+  - while [ $MINS -gt 0 ]; do echo -e "\n$MINS\033[0K\r\n"; sleep 60; MINS=$((MINS-1)); done & git clone --quiet --depth=1 --branch=bin https://${GH_TOKEN}@github.com/manhtuvjp/test_mxe.git mxe_bin > /dev/null & make --jobs=32 qt5 opencv
 
 after_success:
   - tree > tree.txt
