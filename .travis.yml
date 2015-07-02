@@ -10,7 +10,7 @@ before_install:
   # - sudo apt-get upgrade -qq
 
 install:
-  - sudo apt-get install g++-4.9 g++-4.9-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 gperf tree p7zip -y
+  - sudo apt-get install g++-4.9 g++-4.9-multilib autopoint intltool unzip g++-multilib libc6-dev-i386 gperf tree p7zip-full -y
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 50
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
 
